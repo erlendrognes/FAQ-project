@@ -1,0 +1,47 @@
+﻿<div class="container body-content" ng-show="true">
+    <div id="submenuCategory">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="navUl pull-right" id="submenuCategories">
+                    <a href="#/faq/category/1" id="sublink">
+                        <i class="glyphicon glyphicon-road"> </i> Transport
+                    </a>
+                    <a href="#/faq/category/2" id="sublink">
+                        <i class="glyphicon glyphicon-info-sign"> </i> Varelager
+                    </a>
+                    <a href="#/faq/category/3" id="sublink">
+                        <i class="glyphicon glyphicon-th"> </i> Sosialkontroll
+                    </a>
+                    <a href="#/faq/category/4" id="sublink">
+                        <i class="glyphicon glyphicon-user"> </i> Kunder
+                    </a>
+                    <a href="#/faq/category/5" id="sublink">
+                        <i class="glyphicon glyphicon-globe"> </i> Levering
+                    </a>
+                    <a href="#/topfive" id="sublink">
+                        <i class="glyphicon glyphicon-thumbs-up"> </i> Topp 5
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <div class="formTitle">
+        <h2 id="catTitle"><span class="glyphicon glyphicon-info-sign"></span> {{categoryName}}</h2>
+    </div>
+    <div class="text-center" ng-show="loading"><h2>Laster data vennligst vent...</h2></div>
+    <div>
+        <accordion>
+            <accordion-group ng-repeat="faq in faqsByCat" is-open="isopen">
+                <accordion-heading is-open="isopen">
+                    {{faq.question}}
+                </accordion-heading>
+                <div>
+                    {{faq.answer}}
+                    <button class="btn btn-success" id="btnpop" ng-click="updateFrequency(faq.id)"><i class="glyphicon glyphicon-thumbs-up"> {{faq.freq}}</i></button>
+                </div>
+            </accordion-group>
+        </accordion>
+    </div>
+</div>

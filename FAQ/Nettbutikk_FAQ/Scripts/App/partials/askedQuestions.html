@@ -1,0 +1,16 @@
+﻿<div class="jumbotron" ng-show="true">
+    <div class="formTitle">
+        <h2 id="catTitle"><span class="glyphicon glyphicon-question-sign"></span> Spørsmål fra brukere</h2>
+        <accordion>
+            <accordion-group ng-repeat="faq in asked" is-open="isopen">
+                <accordion-heading is-open="isopen">
+                    {{faq.title}}
+                </accordion-heading>
+                    {{faq.question}}
+                    <div>
+                        <p id="questsign">{{faq.name}} ---- {{faq.email}} </p>
+                    </div>
+            </accordion-group>
+        </accordion>
+    </div>
+</div>

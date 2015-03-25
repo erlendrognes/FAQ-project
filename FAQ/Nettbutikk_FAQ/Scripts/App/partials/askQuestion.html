@@ -1,0 +1,64 @@
+﻿<div class="jumbotron">
+    <div class="row">
+        <div class="formTitle">
+            <h2 id="askTitle"><span class="glyphicon glyphicon-question-sign"></span>  Spør oss</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form name="schema" role="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <h3>Tittel:</h3>
+                                    <input class="form-control" id="inputTitle" data-ng-model="title" name="title" placeholder="Tittel" data-ng-required="true" data-ng-pattern="/^[a-zæøåA-ZÆØÅ0-9. ?!.,\-]*$/" data-ng-minlength="3" data-ng-maxlength="100" />
+                                    <p class="label label-danger" data-ng-show="schema.title.$error.minlength && schema.title.$dirty">Tittel er for kort</p>
+                                    <p class="label label-danger" data-ng-show="schema.title.$error.maxlength && schema.title.$dirty">Tittel er for lang</p>
+                                    <p class="label label-danger" data-ng-show="schema.title.$error.pattern && schema.title.$dirty">Tittel inneholder ugyldig tegn</p>
+                                    <p class="label label-danger" data-ng-show="schema.title.$error.required && schema.title.$dirty">Du må skrive inn en tittel</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <h3>Spørsmål:</h3>
+                                    <textarea class="form-control" data-ng-model="question" name="question" placeholder="Skriv inn ditt spørsmål..." id="textarea" data-ng-required="true" data-ng-minlength="5"></textarea>
+                                    <p class="label label-danger" data-ng-show="schema.question.$error.required && schema.question.$dirty">Du må skrive inn et spørsmål</p>
+                                    <p class="label label-danger" data-ng-show="schema.question.$error.minlength && schema.question.$dirty">Spørsmålet er for kort</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <h3>Navn:</h3>
+                                    <input class="form-control input" data-ng-model="name" placeholder="Navn" name="name" data-ng-required="true" data-ng-pattern="/^[a-zæøåA-ZÆØÅ. \-]*$/" data-ng-minlength="3" data-ng-maxlength="40" />
+                                    <p class="label label-danger" data-ng-show="schema.name.$error.required && schema.name.$dirty">Du må skrive inn et navn</p>
+                                    <p class="label label-danger" data-ng-show="schema.name.$error.minlength && schema.name.$dirty">Navn er for kort</p>
+                                    <p class="label label-danger" data-ng-show="schema.name.$error.maxlength && schema.name.$dirty">Navn er for langt</p>
+                                    <p class="label label-danger" data-ng-show="schema.name.$error.pattern && schema.name.$dirty">Navn inneholder ugyldig tegn</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <h3>E-post:</h3>
+                                    <input class="form-control input" data-ng-model="email" placeholder="Epost" name="email" data-ng-required="true" data-ng-pattern="/^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]@[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/" data-ng-minlength="3" data-ng-maxlength="40" />
+                                    <p class="label label-danger" data-ng-show="schema.email.$error.required && schema.email.$dirty">Du må skrive inn en e-post</p>
+                                    <p class="label label-danger" data-ng-show="schema.email.$error.minlength && schema.email.$dirty">E-post er for kort</p>
+                                    <p class="label label-danger" data-ng-show="schema.email.$error.maxlength && schema.email.$dirty">E-post er for lang</p>
+                                    <p class="label label-danger" data-ng-show="schema.email.$error.pattern && schema.email.$dirty">E-post er ugyldig</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <button type="submit" data-ng-click="askQuestion()" class="btn btn-primary" data-ng-disabled="schema.$invalid" tabindex="11" id="submit">
+                                <i class="glyphicon glyphicon-pencil"></i>  Send inn spørmål
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
